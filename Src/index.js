@@ -1,4 +1,3 @@
-//little baby man lowkey lol
 const { Client, IntentsBitField} = require('discord.js')
 require('dotenv').config()
 
@@ -14,7 +13,7 @@ client.login(process.env.TOKEN)
  })
 
 client.on('messageCreate', (message) => {
-    if(!message.author.bot && message.content === 'LEVANTE'){
-        message.reply('Hellor wordddd!!!!!!!!💅')
+    if(!message.author.bot && message.content === 'ATACAR!'){
+        message.reply('MORRA PEDRO MALDITO')
     }
 })
