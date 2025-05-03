@@ -1,6 +1,5 @@
 const path = require('path')
 const GetAllFiles = require('../util/GetAllFiles')
-const { eventNames } = require('process')
 
 module.exports = (client) => {
     const EventFolders = GetAllFiles(path.join(__dirname, '..', 'events'), true)
