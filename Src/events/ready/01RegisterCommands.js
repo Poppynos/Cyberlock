@@ -2,7 +2,7 @@ const { TestServer } = require('../../../config.json')
 const GetLocalCommands = require('../../util/GetLocalCommands')
 const AreCommandsDiff = require('../../util/AreCommandsDif')
 const GetAppCommands = require('../../util/GetAppCommands')
-const { channelMention, ApplicationCommand } = require('discord.js')
+
 
 module.exports = async (client) => {
     try {

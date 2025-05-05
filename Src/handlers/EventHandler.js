@@ -13,10 +13,7 @@ module.exports = (client) => {
         client.on(EventName, async (arg) => {
             for(const EventFile of EventFiles){
                 const EventFunction = require(EventFile)
-                
-                if (typeof EventFunction === 'function') {
-                  await EventFunction(client, arg)
-                }               
+                await EventFunction(client, arg)             
             }
         })
     }

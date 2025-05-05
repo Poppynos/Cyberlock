@@ -2,13 +2,13 @@ const { devs, TestServer} = require('../../../config.json')
 const GetLocalCommands = require('../../util/GetLocalCommands')
 
 module.exports = async (client, interaction) => {
+  console.log('FUNCIONA')
     if(!interaction.isChatInputCommand()) return
-    console.log('works #1')
+
     const LocalCommands = GetLocalCommands()
 
     try {
-        const CommandObj = LocalCommands.find((cmd) => cmd.name === interaction.CommandName)
-        console.log('works #2')
+        const CommandObj = LocalCommands.find((cmd) => cmd.name === interaction.commandName)
         if(!CommandObj) return
 
         if(CommandObj.devOnly){
@@ -32,7 +32,7 @@ module.exports = async (client, interaction) => {
         }
 
         if(CommandObj.PermissionRequired?.length){
-            for (const permission of CommandObjmmandObject.PermissionRequired) {
+            for (const permission of CommandObj.PermissionRequired) {
                 if (!interaction.member.permissions.has(permission)) {
                   interaction.reply({
                     content: 'Nuh uh, you are not allowed',
@@ -55,7 +55,6 @@ module.exports = async (client, interaction) => {
               }
             }
           }
-
         await CommandObj.callback(client, interaction)
     } catch (error) {
         console.log(`There was an error: ${error}`)

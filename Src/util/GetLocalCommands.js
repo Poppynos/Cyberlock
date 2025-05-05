@@ -14,6 +14,5 @@ module.exports = (exceptions) => {
             LocalCommands.push(CommandObj)
         }
     }
-    
     return LocalCommands
 }

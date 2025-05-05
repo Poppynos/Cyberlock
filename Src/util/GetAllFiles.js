@@ -15,6 +15,5 @@ module.exports = (directory, FoldersOnly = false) => {
             FileNames.push(FilePath)
         }
     }
-
     return FileNames
 }
