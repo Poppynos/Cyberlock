@@ -1,14 +1,8 @@
-const { PermissionFlagsBits } = require("discord.js")
-
 module.exports = {
     name : 'ban', 
-    description : 'bans a random guy', 
-
-    PermissionRequired : [PermissionFlagsBits.Administrator],
-    BotPermission : [PermissionFlagsBits.Administrator],
+    description : 'Bans a random guy', 
 
     callback : (client, interaction) => {
         interaction.reply(`Pong! ${client.ws.ping}ms`)
     }
-
 }
