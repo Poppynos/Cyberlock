@@ -4,12 +4,12 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 const client = new Client({
-    intents: [
-        IntentsBitField.Flags.Guilds, 
-        IntentsBitField.Flags.GuildMembers, 
-        IntentsBitField.Flags.GuildMessages, 
-        IntentsBitField.Flags.MessageContent
-    ]
+intents: [
+IntentsBitField.Flags.Guilds, 
+IntentsBitField.Flags.GuildMembers, 
+IntentsBitField.Flags.GuildMessages, 
+IntentsBitField.Flags.MessageContent
+]
 })
 
 async function run() {
@@ -17,6 +17,7 @@ async function run() {
         mongoose.set('strictQuery', false)
         await mongoose.connect(process.env.DB)
 
+        client.login(process.env.TOKEN)
         EventHandler(client)
 
         client.login(process.env.TOKEN)
