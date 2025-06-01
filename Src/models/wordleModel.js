@@ -9,6 +9,14 @@ const wordleSchema = new Schema({
         type : String,
         required : true
     },
+    lastMessage : {
+        type : String,
+        required : true
+    },
+    answer : {
+        type : String,
+        required : true
+    },
     guesses : {
         type : Array,
         default : []
@@ -20,7 +28,7 @@ const wordleSchema = new Schema({
     gamesPlayed : {
         type : Number,
         default : 0
-    }
+    },
 })
 
 module.exports = model('Wordle', wordleSchema)
