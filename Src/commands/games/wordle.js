@@ -28,8 +28,10 @@ module.exports = {
             const userData = await wordleSchema.findOne({ userId : interaction.user.id })
             let user = userData
 
+            let winRate = user?.wins/user?.gamesPlayed * 100
+
             if(user?.lastPlayed == getTodaysDate()){
-                    interaction.reply(`Você já jogou hoje, volte amanhã! Sua palavra era: ${user.answer}`)
+                    interaction.reply(`Você já jogou hoje, volte amanhã! Sua palavra era: ${user.answer}. Sua porcentagem de vitória é de ${winRate.toFixed(0)}%`)
                     return
             }
 
